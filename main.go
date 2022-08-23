@@ -7,7 +7,7 @@ import (
 
 func main() {
 	// encryption
-	msg := "helloworld"
+	msg := `{"hello": "world"}`
 	r := rsaencryption.NewRsaEncryption(msg, "", 2048)
 	r.Encrypt()
 	fmt.Println("plain text: ", msg)
@@ -15,4 +15,9 @@ func main() {
 
 	r.Decrypt()
 	fmt.Println("decrypted text: ", r.DecText)
+
+	r.RSASign()
+	fmt.Println("sign: ", r.Sign)
+	r.RSAVerify()
+	fmt.Println("verify: ", r.Verify)
 }
