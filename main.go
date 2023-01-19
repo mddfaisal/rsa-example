@@ -13,9 +13,11 @@ func main() {
 	fmt.Println("plain text: ", msg)
 	fmt.Println("encrypted text: ", r.EncText)
 
+	// decryption
 	r.Decrypt()
 	fmt.Println("decrypted text: ", r.DecText)
 
+	// sign and verify
 	r.RSASign()
 	fmt.Println("sign: ", r.Sign)
 	r.RSAVerify()
